@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --coca-red: #E41A1C;
+  --coca-dark-red: #B71C1C;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white text-coca-black;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80 dark:bg-black/40;
+  }
+  
+  .coca-gradient {
+    @apply bg-gradient-to-br from-coca-red via-coca-darkRed to-black;
+  }
+  
+  .shimmer-effect {
+    @apply bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
